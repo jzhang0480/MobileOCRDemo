@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fef-E3-zS2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tAG-4L-hVC">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="Fef-E3-zS2" customClass="ViewController" customModule="MobileOCRDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="in9-bo-zk4"/>
+                        <viewControllerLayoutGuide type="bottom" id="3rW-gw-hNg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q9g-oz-a9U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFI-eg-LGa" userLabel="Camera View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvS-hL-Oju">
+                                <rect key="frame" x="47.5" y="261.5" width="280" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7Lv-mn-nPd"/>
+                                    <constraint firstAttribute="width" constant="280" id="ToZ-3U-yhZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vMi-iT-7G8">
+                                <rect key="frame" x="47.5" y="197.5" width="280" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Kfh-5k-xcH"/>
+                                    <constraint firstAttribute="height" constant="44" id="TR5-eZ-KRm"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyq-bd-Jun" userLabel="View Finder">
+                                <rect key="frame" x="47.5" y="311.5" width="280" height="44"/>
+                                <color key="backgroundColor" red="0.088239587843418121" green="0.73320615291595459" blue="0.20299345254898071" alpha="0.33358304794520549" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6f7-Y4-bxa"/>
+                                    <constraint firstAttribute="width" constant="280" id="ttD-RR-wSo"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fp-4k-wKk">
+                                <rect key="frame" x="147.5" y="567" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="lWM-an-7JC"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="sfr-Lz-ua5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="重新扫描"/>
+                                <connections>
+                                    <action selector="takePhotoButtonPressed:" destination="Fef-E3-zS2" eventType="touchUpInside" id="zYn-e4-xe8"/>
+                                </connections>
+                            </button>
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nNm-0N-G9r">
+                                <rect key="frame" x="14" y="529" width="347" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueDidChange:" destination="Fef-E3-zS2" eventType="valueChanged" id="IQT-L5-UAU"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6fp-4k-wKk" firstAttribute="top" secondItem="nNm-0N-G9r" secondAttribute="bottom" constant="8" id="B0M-be-Ofw"/>
+                            <constraint firstItem="6fp-4k-wKk" firstAttribute="centerX" secondItem="q9g-oz-a9U" secondAttribute="centerX" id="FTA-n4-nTY"/>
+                            <constraint firstAttribute="trailing" secondItem="JFI-eg-LGa" secondAttribute="trailing" id="KTJ-nn-brN"/>
+                            <constraint firstItem="YvS-hL-Oju" firstAttribute="centerX" secondItem="q9g-oz-a9U" secondAttribute="centerX" id="Lic-YW-eXb"/>
+                            <constraint firstItem="nNm-0N-G9r" firstAttribute="trailing" secondItem="q9g-oz-a9U" secondAttribute="trailingMargin" id="Mok-ER-KHk"/>
+                            <constraint firstItem="YvS-hL-Oju" firstAttribute="top" secondItem="vMi-iT-7G8" secondAttribute="bottom" constant="20" id="TaS-9c-2Au"/>
+                            <constraint firstItem="3rW-gw-hNg" firstAttribute="top" secondItem="6fp-4k-wKk" secondAttribute="bottom" constant="20" id="Xgz-AH-wQK"/>
+                            <constraint firstItem="vMi-iT-7G8" firstAttribute="centerX" secondItem="q9g-oz-a9U" secondAttribute="centerX" id="Xl5-gD-8jC"/>
+                            <constraint firstItem="Dyq-bd-Jun" firstAttribute="top" secondItem="YvS-hL-Oju" secondAttribute="bottom" id="cl1-YG-cWR"/>
+                            <constraint firstItem="Dyq-bd-Jun" firstAttribute="centerX" secondItem="q9g-oz-a9U" secondAttribute="centerX" id="hUN-1d-jXX"/>
+                            <constraint firstItem="Dyq-bd-Jun" firstAttribute="centerY" secondItem="JFI-eg-LGa" secondAttribute="centerY" id="mIL-nN-p1C"/>
+                            <constraint firstItem="3rW-gw-hNg" firstAttribute="top" secondItem="JFI-eg-LGa" secondAttribute="bottom" id="oVq-2f-eaQ"/>
+                            <constraint firstItem="nNm-0N-G9r" firstAttribute="leading" secondItem="q9g-oz-a9U" secondAttribute="leadingMargin" id="xb3-Ef-n7r"/>
+                            <constraint firstItem="JFI-eg-LGa" firstAttribute="top" secondItem="in9-bo-zk4" secondAttribute="bottom" constant="-20" id="ywi-hv-8FU"/>
+                            <constraint firstItem="JFI-eg-LGa" firstAttribute="leading" secondItem="q9g-oz-a9U" secondAttribute="leading" id="zCs-zg-XyG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aTd-Sm-3cR"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="JFI-eg-LGa" id="moa-re-kRo"/>
+                        <outlet property="cropedImage" destination="vMi-iT-7G8" id="pg1-T3-wi5"/>
+                        <outlet property="label" destination="YvS-hL-Oju" id="CWr-wJ-SS3"/>
+                        <outlet property="slider" destination="nNm-0N-G9r" id="sGm-dy-ntV"/>
+                        <outlet property="viewFinder" destination="Dyq-bd-Jun" id="lUI-1h-9Ta"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ohj-hP-ac6" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3972" y="284"/>
+        </scene>
+    </scenes>
+</document>
